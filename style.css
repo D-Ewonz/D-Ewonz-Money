@@ -8,47 +8,229 @@ body {
     font-family: Arial, sans-serif;
     background: #f5f7fb;
     color: #172033;
-    padding: 20px;
 }
 
-h1 {
-    font-size: 32px;
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 240px;
+    background: #ffffff;
+    padding: 30px 20px;
+    border-right: 1px solid #e5e7eb;
+}
+
+.sidebar h1 {
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #4b5563;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+.sidebar a:hover {
+    background: #f1f5f9;
+}
+
+/* Main */
+
+.main {
+    flex: 1;
+    padding: 35px;
+    max-width: 1400px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.top h2 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.top p {
+    color: #6b7280;
+}
+
+.profile {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+}
+
+/* Balance */
+
+.balance-card {
+    background: #111827;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
     margin-bottom: 25px;
 }
 
-h2 {
+.balance-card p {
+    color: #d1d5db;
+}
+
+.balance-card h1 {
+    font-size: 38px;
+    margin: 10px 0 25px;
+}
+
+.balance-buttons button {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin-right: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.income-btn {
+    background: #22c55e;
+    color: white;
+}
+
+.expense-btn {
+    background: #ef4444;
+    color: white;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+}
+
+.card span {
+    font-size: 24px;
+}
+
+.card p {
+    color: #6b7280;
+    margin: 10px 0;
+}
+
+.card h2 {
+    font-size: 23px;
+}
+
+/* Sections */
+
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 25px;
+}
+
+.section h2 {
     margin-bottom: 20px;
 }
 
-h3 {
-    margin-bottom: 10px;
+.spending p {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #f1f5f9;
 }
 
-p {
-    margin: 8px 0;
+/* Savings */
+
+.goal-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
 }
 
-button {
-    padding: 12px 18px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-right: 8px;
-    font-weight: bold;
+.progress {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-button:first-of-type {
-    background: #16a34a;
-    color: white;
+.progress-bar {
+    width: 50%;
+    height: 100%;
+    background: #22c55e;
 }
 
-button:last-of-type {
-    background: #dc2626;
-    color: white;
+.goal p {
+    color: #6b7280;
+    margin-top: 10px;
 }
 
-hr {
-    margin: 30px 0;
-    border: none;
-    border-top: 1px solid #ddd;
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .sidebar h1 {
+        margin-bottom: 15px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar a {
+        white-space: nowrap;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .balance-card h1 {
+        font-size: 30px;
+    }
 }
